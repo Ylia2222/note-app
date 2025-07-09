@@ -1,42 +1,74 @@
-h1 {
-    text-align: center;
+#main {
+    display: none;
 }
 
 #note-gallery {
-    background-color: #a7a7a7;
-    width: 100%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--padding-gallery);
     align-content: flex-start;
+    padding: var(--padding-gallery);
 }
 
 .note {
-    background-color: #e6e6e6;
+    background-color: var(--p-color);
     height: 200px;
     width: 200px;
     border-style: solid;
-    /*flex-grow: 1;*/
     overflow: hidden;
+    border-color: var(--accent-1);
+    border-radius: 9px;
+    box-shadow: 0px 4px 6px var(--shadow-1);
+    transform: 0.25s;
+}
+
+.note:hover {
+    transform: scale(1.02);
+    background-color: #ffdeb2;
+}
+
+.note:active {
+    transform: scale(1.02);
 }
 
 .note-content {
-    width: 100%;
-    height: 100%;
     word-wrap: break-word;
+    padding: 12px;
 }
 
 .note-delete-container {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.note-delete-container input,
+.note-delete-container button {
+    --size: 20px;
+    height: var(--size);
+    width: var(--size);
 }
 
 #note-add-btn {
+    background-color: var(--p-color);
     position: fixed;
     right: 20px;
     bottom: 20px;
     font-size: 80px;
     border-radius: 100%;
+    border-color: var(--accent-1);
     width: 100px;
     height: 100px;
+    box-shadow: 0px 4px 6px var(--shadow-1);
+    transform: 0.25s;
+}
+
+#note-add-btn:hover {
+    transform: scale(1.02);
+    color: #525252;
+    background-color: #c1c1c1;
+}
+
+#note-add-btn:active {
+    transform: scale(1.02);
 }

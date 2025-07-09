@@ -1,4 +1,31 @@
+:root {
+    --p-color: #8da3ff;
+    --s-color: #425c60;
+    --text-color: #00453f;
+    --padding-gallery: 19px;
+    --accent-1: #506bff;
+    --shadow-1: rgba(0, 0, 0, 0.35);
+    --button-bg-1: #db8585;
+    --button-bg-2: #8ce28c;
+    --button-text-1: #7b0303;
+    --button-text-2: #005700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--text-color);
+}
+
 body {
     width: 100vw;
     margin: 0;
+    background-color: var(--s-color);
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--p-color);
+
 }

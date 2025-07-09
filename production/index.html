@@ -30,15 +30,24 @@
         </div>
     </div>
 
+    <!-- Меню Управления -->
+
+    <div id="control-menu">
+        <button id="ctrl-menu-delete" onclick="DeleteNote()">Удалить</button>
+    </div>
+
     <script>
         var noteIndex = localStorage.getItem("na_noteIndex")
+
+        var controlMenu = document.querySelector("#control-menu")
+        controlMenu.style.display = "none"
 
         if (noteIndex === null)
             noteIndex = 0
 
         function OpenModal() {
             document.querySelector("#main").style.display = "none"
-            document.querySelector("#modal").style.display = "block"
+            document.querySelector("#modal").style.display = "flex"
         }
 
         function CloseModal() {
@@ -54,8 +63,7 @@
             gallery.innerHTML +=
                 `<div class="note" onclick="EditNote()">
                 <div class="note-delete-container">
-                    <input type="checkbox">
-                    <button class="note-delete" onclick="DeleteNote()">X</button>
+                    <input type="checkbox" onclick="ShowControlMenu()">
                 </div>
                 <div class="note-content">${text}</div>
             </div>`
@@ -86,8 +94,7 @@
                     gallery.innerHTML +=
                         `<div class="note" onclick="EditNote()">
                     <div class="note-delete-container">
-                        <input type="checkbox">     
-                        <button class="note-delete" onclick="DeleteNote()">X</button>
+                        <input type="checkbox" onclick="ShowControlMenu()"> 
                     </div>
                     <div class="note-content">${text}</div>
                 </div>`
@@ -138,6 +145,27 @@
 
         function EditNote() {
             console.log("edit note")
+        }
+
+        function ShowControlMenu() {
+            var boxChecked = false
+
+            var checkboxes = document.querySelectorAll(".note input")
+            
+            var i = 0
+            while(i < checkboxes.length){
+                if(checkboxes[i].checked){
+                    boxChecked = true
+                    break
+                }
+                i++
+            }
+
+            if (boxChecked) {
+                controlMenu.style.display = "block"
+            } else {
+                controlMenu.style.display = "none"
+            }
         }
 
         LoadNote()
