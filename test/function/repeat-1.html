@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        document.body.innerHTML += '<div class="box">aaa</div>'
+        var block = document.querySelector(".box")
+        block.style.width = "100px"
+        block.style.height = "100px"
+        block.style.textAlign = "center"
+        block.style.backgroundColor = `rgb(
+            ${Math.random() * 255},
+            ${Math.random() * 255},
+            ${Math.random() * 255})
+        `
+    </script>
+</body></html>
