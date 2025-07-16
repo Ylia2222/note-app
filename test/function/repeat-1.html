@@ -6,17 +6,56 @@
 </head>
 
 <body>
-
+    <!--<div class="box">aaa</div>
+    <div class="box">aaa</div>
+    <div class="box">aaa</div>
+    <div class="box">aaa</div>
+    <div class="box">aaa</div>
+    <div class="box">aaa</div>
+    <div class="box">aaa</div>
+    <div class="box">aaa</div>
+    -->
     <script>
-        document.body.innerHTML += '<div class="box">aaa</div>'
-        var block = document.querySelector(".box")
-        block.style.width = "100px"
-        block.style.height = "100px"
-        block.style.textAlign = "center"
-        block.style.backgroundColor = `rgb(
+        /* var i = 0
+
+        while (i < 10) {
+            document.body.innerHTML += '<div class="box">aaa</div>'
+            var block = document.querySelector(".box")
+            block.style.width = "100px"
+            block.style.height = "100px"
+            block.style.textAlign = "center"
+            block.style.backgroundColor = `rgb(
             ${Math.random() * 255},
             ${Math.random() * 255},
             ${Math.random() * 255})
         `
+            i++
+        }*/
+
+        var i = 0
+
+        while (i < 100) {
+            document.body.innerHTML += '<div class="box">aaa</div>'
+            var block = document.querySelector(".box")
+            i++
+        }
+
+        var boxes = document.querySelectorAll(".box")
+
+        var i = 0
+
+        while (i < boxes.length) {
+            var box = boxes[i]
+            box.style.width = "100px"
+            box.style.height = "100px"
+            box.style.textAlign = "center"
+            box.style.backgroundColor = `rgb(
+            ${Math.random() * 255},
+            ${Math.random() * 255},
+            ${Math.random() * 255})
+        `
+            i++
+        }
     </script>
+
 </body></html>
